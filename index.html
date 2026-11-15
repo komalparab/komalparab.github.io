@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Komal Parab – Data Analyst Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Newsreader:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F3F5FA;--card:#FFFFFF;--ink:#17203D;--muted:#55607F;--line:#D9DEEC;
+  --indigo:#3347D6;--mint:#BFEBD9;--amber:#F5B942;--term:#17203D;--termtxt:#E8ECFA;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#12172B;--card:#1A2140;--ink:#EDF0FB;--muted:#A3ADCC;--line:#2B345A;
+  --indigo:#8C9BFF;--mint:#2C6B57;--amber:#F5B942;--term:#0B0F1E;--termtxt:#E8ECFA}}
+:root[data-theme="dark"]{
+  --paper:#12172B;--card:#1A2140;--ink:#EDF0FB;--muted:#A3ADCC;--line:#2B345A;
+  --indigo:#8C9BFF;--mint:#2C6B57;--amber:#F5B942;--term:#0B0F1E;--termtxt:#E8ECFA}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Newsreader",Georgia,serif;font-size:19px;line-height:1.6}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;margin:0;line-height:1.05;letter-spacing:-.02em}
+a{color:var(--indigo)}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+section{padding:84px 0}
+h2{font-size:clamp(32px,5vw,52px);font-weight:800;margin-bottom:36px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--paper);z-index:20}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:56px}
+nav b{font-family:"Bricolage Grotesque",sans-serif;font-size:20px}
+nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;font-family:"Bricolage Grotesque",sans-serif;font-size:15px;font-weight:500;overflow-x:auto}
+nav a{color:var(--muted);text-decoration:none;white-space:nowrap}
+nav a:hover{color:var(--indigo)}
+#theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:99px;width:36px;height:36px;cursor:pointer;font-size:16px;flex:none}
+/* hero */
+.hero{padding:56px 0 72px}
+.hero h1{font-size:clamp(52px,11vw,128px);font-weight:800}
+.hero h1 span{display:block}
+.hero h1 .l2{color:var(--indigo)}
+.tag{font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(18px,2.4vw,24px);font-weight:500;margin:20px 0 32px;color:var(--muted);max-width:640px}
+.term{background:var(--term);color:var(--termtxt);border-radius:14px;font-family:"JetBrains Mono",monospace;font-size:14px;line-height:1.7;overflow:hidden;max-width:760px}
+.term .bar{display:flex;gap:7px;padding:12px 16px;border-bottom:1px solid #ffffff1f}
+.term .bar i{width:11px;height:11px;border-radius:50%;background:#ffffff33}
+.term pre{margin:0;padding:16px 20px;white-space:pre-wrap;min-height:112px}
+.kw{color:#8C9BFF}.str{color:#7FE3B8}
+.caret{display:inline-block;width:8px;height:1.1em;background:var(--amber);vertical-align:text-bottom;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.res{width:100%;border-collapse:collapse;font-size:13.5px}
+.res th,.res td{text-align:left;padding:8px 20px;border-top:1px solid #ffffff1f}
+.res th{color:#9AA6D1;font-weight:500}
+.res tr.row{opacity:0;transform:translateY(6px);transition:opacity .5s,transform .5s}
+.res tr.row.on{opacity:1;transform:none}
+.res-wrap{overflow-x:auto}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:16px;padding:13px 22px;border-radius:10px;text-decoration:none;border:2px solid var(--ink);color:var(--ink);transition:transform .15s,background .15s}
+.btn.pri{background:var(--indigo);border-color:var(--indigo);color:#fff}
+:root[data-theme="dark"] .btn.pri{color:#12172B}
+.btn:hover{transform:translateY(-2px)}
+/* impact */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.stat{padding:28px 20px 28px 0}
+.stat+.stat{padding-left:20px;border-left:1px solid var(--line)}
+.stat b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(44px,6vw,72px);font-weight:800;line-height:1;color:var(--indigo)}
+.stat span{display:block;margin-top:10px;color:var(--muted);font-size:17px;line-height:1.35}
+@media(max-width:620px){.stat,.stat+.stat{padding:20px 0;border-left:0;border-top:1px solid var(--line)}}
+/* about */
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:48px}
+.about p{margin:0 0 16px;max-width:60ch}
+.facts{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 26px;align-self:start}
+.facts dt{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:14px;color:var(--muted)}
+.facts dd{margin:0 0 14px}
+@media(max-width:760px){.about{grid-template-columns:1fr}}
+/* experience */
+.tl{border-left:3px solid var(--indigo);margin-left:6px;padding-left:28px;display:grid;gap:44px}
+.job{position:relative}
+.job::before{content:"";position:absolute;left:-38px;top:8px;width:15px;height:15px;border-radius:50%;background:var(--paper);border:3px solid var(--indigo)}
+.job.now::before{background:var(--amber);border-color:var(--amber);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 #F5B94299}100%{box-shadow:0 0 0 14px #F5B94200}}
+.job h3{font-size:26px;font-weight:700}
+.job .meta{color:var(--muted);margin:4px 0 12px;font-style:italic}
+.job ul{margin:0;padding-left:20px;max-width:75ch}
+.job li{margin-bottom:8px}
+/* projects */
+.proj{display:grid;gap:20px}
+.pc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px}
+.pc:nth-child(2){border-radius:28px 6px 28px 6px}
+.pc h3{font-size:24px;margin-bottom:6px}
+.pc p{margin:0 0 20px;color:var(--muted);max-width:68ch}
+.cmp{display:grid;gap:10px;font-family:"JetBrains Mono",monospace;font-size:13px}
+.cmp .r{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:center}
+.track{background:var(--paper);border-radius:6px;height:30px;overflow:hidden}
+.fill{height:100%;width:0;display:flex;align-items:center;padding-left:10px;white-space:nowrap;border-radius:6px;transition:width 1.4s cubic-bezier(.2,.8,.2,1);color:#17203D;font-weight:500}
+.fill.b{background:var(--amber)}.fill.a{background:var(--mint)}
+:root[data-theme="dark"] .fill.a{color:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .fill.a{color:#fff}}
+.pc.go .fill{width:var(--w)}
+.pc small{display:block;margin-top:14px;font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--indigo)}
+/* skills */
+.sk{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px 40px}
+.sk h3{font-size:19px;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-family:"JetBrains Mono",monospace;font-size:13px;border:1px solid var(--ink);border-radius:99px;padding:5px 13px;transition:background .15s,color .15s}
+.chips span:hover{background:var(--indigo);border-color:var(--indigo);color:#fff}
+/* edu */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px}
+.cols h3{font-size:22px;margin-bottom:14px}
+.it{padding:12px 0;border-top:1px solid var(--line)}
+.it b{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:17px;display:block}
+.it span{color:var(--muted);font-size:17px}
+/* contact */
+.contact{background:var(--ink);color:var(--paper);padding:84px 0 calc(64px + env(safe-area-inset-bottom,0px))}
+.contact h2{font-size:clamp(40px,8vw,88px);margin-bottom:28px}
+.contact a{color:var(--amber);font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(18px,3vw,28px);font-weight:700;display:block;margin:6px 0;overflow-wrap:anywhere}
+.contact p{color:var(--paper);opacity:.75;max-width:48ch}
+/* motion: single orchestrated load; scroll reveal only for stats */
+.rise{opacity:0;transform:translateY(24px);animation:rise .8s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .rise,.res tr.row{opacity:1;transform:none}
+  .fill{width:var(--w)}
+}
+@media print{nav,#theme,.cta{display:none}section{padding:28px 0}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <b>Komal Parab</b>
+  <ul><li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#contact">Contact</a></li></ul>
+  <button id="theme" aria-label="Switch light or dark theme">◐</button>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <h1><span class="rise" style="animation-delay:.05s">Komal</span><span class="l2 rise" style="animation-delay:.2s">Parab</span></h1>
+  <p class="tag rise" style="animation-delay:.4s">Data analyst in Mumbai. I turn slow, manual reports into fast, accurate, automated ones.</p>
+  <div class="term rise" style="animation-delay:.6s" role="img" aria-label="A SQL query that returns Komal’s name, role, experience and tools">
+    <div class="bar"><i></i><i></i><i></i></div>
+    <pre id="q" aria-hidden="true"></pre>
+    <div class="res-wrap"><table class="res" id="res" aria-hidden="true" hidden>
+      <tr><th>name</th><th>role</th><th>experience</th><th>tools</th></tr>
+      <tr class="row"><td>Komal Parab</td><td>Data Analyst</td><td>3.5 years</td><td>SQL, Python, Power BI</td></tr>
+      <tr class="row"><td>Komal Parab</td><td>Team coordinator</td><td>Team of 3</td><td>Snowflake, VBA</td></tr>
+      <tr class="row"><td>Komal Parab</td><td>Client partner</td><td>Italy, Switzerland</td><td>Power Automate</td></tr>
+    </table></div>
+  </div>
+  <div class="cta rise" style="animation-delay:.8s">
+    <a class="btn pri" href="#contact">Get in touch</a>
+    <a class="btn" href="#projects">See my work</a>
+  </div>
+</div></header>
+
+<section style="padding-top:20px"><div class="wrap">
+  <div class="stats">
+    <div class="stat"><b data-n="40" data-s="+">0</b><span>hours of manual work removed each month</span></div>
+    <div class="stat"><b data-n="80" data-s="%">0</b><span>faster report runs, at best</span></div>
+    <div class="stat"><b data-n="96" data-s="%">0</b><span>shorter daily task after the Snowflake move</span></div>
+    <div class="stat"><b data-n="100" data-s="%">0</b><span>accuracy kept through validation checks</span></div>
+  </div>
+</div></section>
+
+<section id="about"><div class="wrap">
+  <h2>About</h2>
+  <div class="about">
+    <div>
+      <p>I build reporting that people can trust. At Accenture I work with SQL, Snowflake, Python, VBA and Power BI to make recurring reports quicker to produce and easier to check.</p>
+      <p>Before data, I validated live elevator systems at Schindler India, where a sign-off meant real people could safely ride. That habit of careful, final-checkpoint testing now shapes how I reconcile and validate data.</p>
+      <p>I work daily with clients in Italy, coordinate a team of 3, and have been recognised with several performance awards.</p>
+    </div>
+    <dl class="facts">
+      <dt>Currently</dt><dd>I&amp;F Decision Sci Practitioner Analyst, Accenture</dd>
+      <dt>Experience</dt><dd>3 years 6 months</dd>
+      <dt>Based in</dt><dd>Mumbai, India</dd>
+      <dt>Certified</dt><dd>Microsoft DP-600 (Fabric analytics)</dd>
+    </dl>
+  </div>
+</div></section>
+
+<section id="experience" style="background:var(--card)"><div class="wrap">
+  <h2>Experience</h2>
+  <div class="tl">
+    <article class="job now">
+      <h3>I&amp;F Decision Sci Practitioner Analyst</h3>
+      <p class="meta">Accenture, Navi Mumbai (hybrid), Nov 2024 to present</p>
+      <ul>
+        <li>Work daily with clients and teams in Italy to deliver accurate, on-time Tech Assist reports.</li>
+        <li>Automated reporting workflows with Python, VBA, MySQL, SQL, Excel and Power Query, cutting run time by up to 80% and saving about 40 hours a month.</li>
+        <li>Re-engineered 9 Oracle SQL queries on a VM into 3 Snowflake queries, cutting daily load time by 96% and removing the VM.</li>
+        <li>Designed and maintained Power BI dashboards aligned to stakeholder needs.</li>
+        <li>Ran validation, reconciliation and quality checks across reporting systems, keeping data 100% accurate and consistent.</li>
+        <li>Coordinated a team of 3 and covered for Team Leads during their absence.</li>
+      </ul>
+    </article>
+    <article class="job">
+      <h3>Engineer, System Validation &amp; HIL Lab</h3>
+      <p class="meta">Schindler India, Pune, Jan 2022 to Jun 2023</p>
+      <ul>
+        <li>Final validation checkpoint for live elevator systems, with 100% test-case coverage for assigned cycles.</li>
+        <li>Built HIL Lab simulation models of elevator door operations that met safety and performance standards.</li>
+        <li>Led a final project on door automation: development, simulation and validation end to end.</li>
+        <li>Worked with Switzerland-based clients to refine simulations and improve system reliability.</li>
+        <li>Completed each validation cycle in 2 to 3 days to keep releases on schedule.</li>
+      </ul>
+    </article>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <h2>Projects</h2>
+  <div class="proj">
+    <article class="pc">
+      <h3>Python reporting automation</h3>
+      <p>Automated 4 recurring daily reports, with built-in validation and reconciliation so accuracy stayed at 100%.</p>
+      <div class="cmp">
+        <div class="r"><span>Before</span><div class="track"><div class="fill b" style="--w:100%">2.5 hours a day</div></div></div>
+        <div class="r"><span>After</span><div class="track"><div class="fill a" style="--w:40%">60 min</div></div></div>
+      </div>
+      <small>60% less processing time, about 1 hour a day freed for analysis</small>
+    </article>
+    <article class="pc">
+      <h3>Oracle SQL to Snowflake migration</h3>
+      <p>Consolidated query logic in Snowflake and removed the Virtual Machine from daily report generation.</p>
+      <div class="cmp">
+        <div class="r"><span>Before</span><div class="track"><div class="fill b" style="--w:100%">2 hours a day</div></div></div>
+        <div class="r"><span>After</span><div class="track"><div class="fill a" style="--w:8%;min-width:0">5m</div></div></div>
+      </div>
+      <small>About 96% reduction, and no VM dependency</small>
+    </article>
+    <article class="pc">
+      <h3>Team leave and backup tracking agent</h3>
+      <p>A Microsoft Copilot agent tracks team leaves and backup cover. Power Automate sends notifications over Teams and Outlook, so nobody has to chase and everyone knows who is covering.</p>
+      <div class="chips"><span>Microsoft Copilot</span><span>Power Automate</span><span>Teams</span><span>Outlook</span></div>
+    </article>
+  </div>
+</div></section>
+
+<section id="skills" style="background:var(--card)"><div class="wrap">
+  <h2>Skills</h2>
+  <div class="sk">
+    <div><h3>BI and visualization</h3><div class="chips"><span>Power BI</span><span>Tableau</span><span>Advanced Excel</span><span>Power Query</span><span>Dashboard design</span></div></div>
+    <div><h3>Databases and programming</h3><div class="chips"><span>SQL</span><span>Oracle SQL</span><span>MySQL</span><span>Snowflake</span><span>Python</span></div></div>
+    <div><h3>Automation</h3><div class="chips"><span>VBA macros</span><span>Batch scripting</span><span>Power Automate</span><span>Microsoft Copilot</span></div></div>
+    <div><h3>Data quality and analysis</h3><div class="chips"><span>Validation and reconciliation</span><span>Quality checks</span><span>Exploratory analysis</span><span>KPI tracking</span></div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="cols">
+    <div>
+      <h2 style="font-size:36px;margin-bottom:20px">Recognition</h2>
+      <div class="it"><b>Power Team Award, FY26 Q3</b><span>Aug 2026. Client delight, operational rigor, engagement and people advocacy.</span></div>
+      <div class="it"><b>Co-Pilot Award, FY26 Q1</b><span>Jan 2026. Collaboration and a positive team environment.</span></div>
+      <div class="it"><b>Onshore Team Appreciation, twice</b><span>Written thanks from the onshore team for consistent quality of delivery.</span></div>
+    </div>
+    <div>
+      <h2 style="font-size:36px;margin-bottom:20px">Education</h2>
+      <div class="it"><b>MTech, Electronics &amp; Telecommunication</b><span>K J Somaiya College of Engineering, Oct 2022, GPA 8.36</span></div>
+      <div class="it"><b>B.E., Core Electronics Engineering</b><span>Vidyalankar Institute of Technology, May 2018</span></div>
+      <div class="it"><b>Diploma, Electronics &amp; Video Engineering</b><span>Swami Vivekananda Polytechnic, May 2015, 70.04%</span></div>
+      <div class="it"><b>Microsoft DP-600</b><span>Implementing Analytics Solutions Using Microsoft Fabric. Cleared.</span></div>
+    </div>
+  </div>
+</div></section>
+
+<footer class="contact" id="contact"><div class="wrap">
+  <h2>Let’s talk data.</h2>
+  <p>Open to conversations about analytics, reporting automation and BI work.</p>
+  <a href="mailto:komalsp17@gmail.com">komalsp17@gmail.com</a>
+  <a href="tel:+919653622349">+91 96536 22349</a>
+  <a href="https://linkedin.com/in/komal-parab-a8398393" target="_blank" rel="noopener">linkedin.com/in/komal-parab-a8398393</a>
+</div></footer>
+
+<script>
+(function(){
+  var rm=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // theme toggle
+  var root=document.documentElement,tb=document.getElementById("theme");
+  tb.addEventListener("click",function(){
+    var dark=getComputedStyle(root).getPropertyValue("--paper").trim()==="#12172B";
+    root.setAttribute("data-theme",dark?"light":"dark");
+  });
+  // hero query typing, then rows appear
+  var parts=[["kw","SELECT "],["","name, role, experience, tools\n"],["kw","FROM "],["","analysts\n"],["kw","WHERE "],["","name = "],["str","'Komal Parab'"],["","\n"],["kw","ORDER BY "],["","impact "],["kw","DESC"],["","; "]];
+  var q=document.getElementById("q"),res=document.getElementById("res");
+  function showRows(){
+    res.hidden=false;
+    var rows=res.querySelectorAll(".row");
+    rows.forEach(function(r,i){setTimeout(function(){r.classList.add("on")},rm?0:i*350)});
+  }
+  if(rm){
+    q.innerHTML=parts.map(function(p){return p[0]?'<span class="'+p[0]+'">'+p[1]+'</span>':p[1]}).join("");
+    showRows();
+  }else{
+    var pi=0,ci=0,html="";
+    function tick(){
+      if(pi>=parts.length){q.innerHTML=html;setTimeout(showRows,300);return}
+      var p=parts[pi];ci++;
+      var cur=html+(p[0]?'<span class="'+p[0]+'">':"")+p[1].slice(0,ci)+(p[0]?"</span>":"");
+      q.innerHTML=cur+'<span class="caret"></span>';
+      if(ci>=p[1].length){html+=(p[0]?'<span class="'+p[0]+'">':"")+p[1]+(p[0]?"</span>":"");pi++;ci=0}
+      setTimeout(tick,28);
+    }
+    setTimeout(tick,1300);
+  }
+  // count-up stats
+  function count(el){
+    var n=+el.dataset.n,s=el.dataset.s||"";
+    if(rm){el.textContent=n+s;return}
+    var t0=null;
+    function f(t){t0=t0||t;var k=Math.min((t-t0)/1400,1),e=1-Math.pow(1-k,3);
+      el.textContent=Math.round(n*e)+s;if(k<1)requestAnimationFrame(f)}
+    requestAnimationFrame(f);
+  }
+  var seen=false;
+  if("IntersectionObserver" in window){
+    new IntersectionObserver(function(es,o){es.forEach(function(e){
+      if(!e.isIntersecting)return;
+      if(e.target.classList.contains("stat")&&!seen){seen=true;document.querySelectorAll(".stat b").forEach(count)}
+      if(e.target.classList.contains("pc")){e.target.classList.add("go")}
+      o.unobserve(e.target);
+    })},{threshold:.35}).observe||0;
+    var io=new IntersectionObserver(function(es,o){es.forEach(function(e){
+      if(!e.isIntersecting)return;
+      if(e.target.classList.contains("stat")&&!seen){seen=true;document.querySelectorAll(".stat b").forEach(count)}
+      if(e.target.classList.contains("pc")){e.target.classList.add("go")}
+      o.unobserve(e.target);
+    })},{threshold:.35});
+    document.querySelectorAll(".stat,.pc").forEach(function(el){io.observe(el)});
+  }else{
+    document.querySelectorAll(".stat b").forEach(count);
+    document.querySelectorAll(".pc").forEach(function(el){el.classList.add("go")});
+  }
+})();
+</script>
+</body>
+</html>
