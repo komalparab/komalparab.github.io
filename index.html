@@ -68,12 +68,14 @@ nav a:hover{color:var(--indigo)}
 .stat span{display:block;margin-top:10px;color:var(--muted);font-size:17px;line-height:1.35}
 @media(max-width:620px){.stat,.stat+.stat{padding:20px 0;border-left:0;border-top:1px solid var(--line)}}
 /* about */
-.about{display:grid;grid-template-columns:1.3fr 1fr;gap:48px}
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:stretch}
+.about>div:first-child{padding-top:22px}
 .about p{margin:0 0 16px;max-width:60ch}
-.facts{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 26px;align-self:start}
+.facts{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 26px;margin:0;display:flex;flex-direction:column;justify-content:space-between}
+.facts dd:last-child{margin-bottom:0}
 .facts dt{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:14px;color:var(--muted)}
 .facts dd{margin:0 0 14px}
-@media(max-width:760px){.about{grid-template-columns:1fr}}
+@media(max-width:760px){.about{grid-template-columns:1fr}.about>div:first-child{padding-top:0}}
 /* experience */
 .tl{border-left:3px solid var(--indigo);margin-left:6px;padding-left:28px;display:grid;gap:44px}
 .job{position:relative}
@@ -265,6 +267,9 @@ nav a:hover{color:var(--indigo)}
       <div class="it"><b>MTech, Electronics &amp; Telecommunication</b><span>K J Somaiya College of Engineering, Oct 2022, GPA 8.36</span></div>
       <div class="it"><b>B.E., Core Electronics Engineering</b><span>Vidyalankar Institute of Technology, May 2018</span></div>
       <div class="it"><b>Diploma, Electronics &amp; Video Engineering</b><span>Swami Vivekananda Polytechnic, May 2015, 70.04%</span></div>
+      </div>
+    <div>
+      <h2 style="font-size:36px;margin-bottom:20px">Certification</h2>
       <div class="it"><b>Microsoft DP-600</b><span>Implementing Analytics Solutions Using Microsoft Fabric. Cleared.</span></div>
     </div>
   </div>
